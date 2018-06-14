@@ -4,6 +4,7 @@
 
 # Xcode
 #
+ios/Intercom.framework/
 build/
 *.pbxuser
 !default.pbxuser

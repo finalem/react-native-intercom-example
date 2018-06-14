@@ -5,6 +5,8 @@
  */
 
 import React, { Component } from 'react';
+import Intercom from 'react-native-intercom';
+
 import {
   Platform,
   StyleSheet,
@@ -22,6 +24,9 @@ const instructions = Platform.select({
 type Props = {};
 export default class App extends Component<Props> {
   render() {
+    Intercom.registerUnidentifiedUser();
+    Intercom.displayMessageComposer();
+
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>

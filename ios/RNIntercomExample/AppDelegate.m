@@ -9,11 +9,15 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import "Intercom/intercom.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  // Initialize Intercom
+  [Intercom setApiKey:@"ios_sdk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" forAppId:@"xxxxxxxx"];
+
   NSURL *jsCodeLocation;
 
   jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
