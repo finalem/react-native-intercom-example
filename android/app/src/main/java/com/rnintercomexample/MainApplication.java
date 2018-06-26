@@ -10,6 +10,9 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 
+import android.content.Context;
+import android.support.multidex.MultiDex;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -47,5 +50,12 @@ public class MainApplication extends Application implements ReactApplication {
 
     Intercom.initialize(this, "android_sdk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "xxxxxxxx");
   }
+
+  @Override
+    protected void attachBaseContext(Context base) {
+      // MultiDex support for Appodeal
+      super.attachBaseContext(base);
+      MultiDex.install(getBaseContext());
+    }
 
 }
